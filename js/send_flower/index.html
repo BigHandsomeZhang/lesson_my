@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>代码设计模式之代理模式</h1>
+    <script>
+    //? 陈美玲
+    // document.write('陈美玲')
+    // 对象字面量 描述功能 表现力
+    // 对象由属性和方法构成
+    // 动作
+    let cml = {
+        name: '陈美玲',
+        age: 20,
+        hometown: '于都',
+        // hasBoyfriend:true
+        isSingle:false,
+        // 形参
+        sendFlower(o){
+            o.receiveFlower(this)
+        }
+    }
+    let xz = {
+        xq: 50,
+        name:'小张',
+        age:21,
+        hometown:'南昌',
+        room:'1123',
+        receiveFlower(o){
+            console.log(`${this.name}收到了${o.name}送的花`)
+            if(this.xq >=90){
+                console.log('万达走一波')
+            }else{
+                console.log('酸辣汤准备好.....')
+            }
+            
+        }}
+    //代理模式
+    let zh ={
+        name:'张航',
+        age:21,
+        hometown:'南昌',
+        room:'1123',
+        // 接口 当不同的对象，具有相同的方法时，可以互换使用
+        receiveFlower(o){ 
+            // if(o.name ==='陈美玲'){
+            //     console.log('我们在一起吧。。。')
+            // }else{
+                // xz.receiveFlower(o)
+            // }
+            setTimeout(function(){
+                xz.xq =95,
+                xz.receiveFlower(o)
+            },10000)
+        }
+    }
+    cml.sendFlower(zh)
+    </script>
+</body>
+</html>
