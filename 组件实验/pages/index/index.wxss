@@ -1,0 +1,10 @@
+page{
+    width: 90%;
+    margin:0 auto;
+}
+.demo_box{
+    display: flex;
+}
+.mt{
+    margin-bottom: 50rpx;
+}

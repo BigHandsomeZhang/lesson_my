@@ -1,0 +1,41 @@
+<view>
+<form bindsubmit="onSubmit" bindreset="onReset">
+    <view class="mt">
+        <text class="mt">1.你现在大几？</text>
+        <radio-group name="radioCheck" class='demo_box' >
+            <view  wx:for="{{grades}}" wx:key="index">
+                <radio value="{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
+            </view>
+        </radio-group>
+    </view>
+    <view class="mt">
+        <text>2.你是用手机最大的用途是什么？</text>
+        <checkbox-group name="checkboxCheck" class="demo_box" >
+            <view wx:for="{{ways}}" wx:key="index">
+                <checkbox id="{{item.id}}" value="{{item.value}}" checked="{{item.checked}}">{{item.name}}</checkbox>
+                <label for="{{item.id}}"></label>
+            </view>
+        </checkbox-group>
+    </view>
+    <view class="mt">
+    <text>3.平均每天使用手机多少小时？</text>
+        <slider name="sliderCheck" min="0" max="24" value="1"  show-value></slider>
+    </view>
+    <view class="mt">
+        <text class="mt">4.你之前有使用过微信小程序嘛？</text>
+        <radio-group name='useCheck' class='demo_box' >
+            <view  wx:for="{{use}}" wx:key="index">
+                <radio value="{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
+            </view>
+        </radio-group>
+    </view>
+    <view class="mt">
+        <text>5.谈谈你对微信小程序未来发展的看法</text>
+        <textarea style="font-size: 20px;" name='textCheck' placeholder="输入你的看法"  />
+    </view>
+    <view class="mt" style="display: flex;">
+        <button type="primary" size="mini" form-type="submit">提交</button>
+        <button type="default" size="mini" form-type="reset">重置</button>
+    </view>
+</form>
+</view>
